@@ -1,0 +1,350 @@
+/* Reusable components. */
+
+/* Cards */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: 0 4px 24px var(--shadow); }
+
+.eyebrow {
+  margin: 0 0 var(--space-1);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.card h2 { margin-bottom: var(--space-3); }
+
+/* Pills and chips (hero) */
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: var(--space-3);
+  padding: 5px 16px;
+  border: 1px solid var(--gold);
+  border-radius: 100px;
+  background: var(--white);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+.chip {
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: var(--white);
+  font-size: 0.82rem;
+  color: var(--ink-light);
+}
+
+/* "Approved": the only green on the site. Used in exactly three places. */
+.chip--approved,
+.approved-pill {
+  border-color: transparent;
+  background: var(--green-badge);
+  color: var(--matcha);
+  font-weight: 600;
+}
+.approved-pill {
+  display: inline-block;
+  margin-left: var(--space-2);
+  padding: 1px 10px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+mark.approved {
+  background: linear-gradient(transparent 55%, var(--green-badge) 55%);
+  color: var(--matcha);
+  font-weight: 600;
+  padding: 0 2px;
+}
+
+/* Hero stats */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin: 0;
+  padding: var(--space-4) 0 0;
+  border-top: 1px solid var(--border);
+}
+.stats > div { margin: 0; }
+.stats dt {
+  order: 2;
+  margin-top: var(--space-1);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.stats dd {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.stats > div { display: flex; flex-direction: column; }
+
+/* Timeline */
+.timeline {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 var(--space-4);
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--border);
+}
+.timeline li { position: relative; margin-bottom: var(--space-3); }
+.timeline li:last-child { margin-bottom: 0; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--space-4) + 3px);
+  top: 0.55em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.timeline li.is-approved::before {
+  background: var(--matcha);
+  box-shadow: 0 0 0 1px var(--matcha);
+}
+.timeline time {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Route cards: where the application goes */
+.route {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.route li {
+  position: relative;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+  text-align: center;
+}
+.route li:not(:last-child)::after {
+  content: "\2192";
+  position: absolute;
+  right: calc(-1 * var(--space-3) - 0.4rem);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  z-index: 1;
+}
+.route__step {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.route__name {
+  display: block;
+  margin: 2px 0;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.route__role { font-size: 0.85rem; color: var(--muted); }
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  columns: 2 15rem;
+  column-gap: var(--space-4);
+}
+.checklist li {
+  position: relative;
+  margin-bottom: var(--space-2);
+  padding-left: 1.6rem;
+  break-inside: avoid;
+}
+.checklist li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.note {
+  margin: 0 0 var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  background: var(--cream);
+  font-size: 0.92rem;
+  color: var(--ink-light);
+}
+
+/* Document download cards */
+.docs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-3) 0;
+}
+.doc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+}
+.doc h3 { margin: 0; }
+.doc p { margin: 0; font-size: 0.88rem; color: var(--muted); }
+.doc .button { margin-top: auto; align-self: flex-start; }
+
+.button {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border-radius: 100px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.button:hover { background: var(--accent-dark); color: #fff; }
+
+/* Cost & Tips: reusable on every content page. */
+.cost-tips {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+.cost-tips__head {
+  padding: var(--space-3) var(--space-4);
+  background: var(--ink);
+  color: var(--ivory);
+}
+.cost-tips__head h2 { margin: 0; font-size: 1.6rem; font-weight: 400; }
+.cost-tips__body { padding: var(--space-3) var(--space-4) var(--space-4); }
+.cost-tips h3 {
+  margin: var(--space-4) 0 var(--space-2);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cost-tips h3:first-child { margin-top: 0; }
+
+.cost-list { list-style: none; margin: 0; padding: 0; }
+.cost-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.cost-list .cost-total { border-bottom: 0; font-weight: 700; }
+.cost-per { margin: var(--space-1) 0 0; font-size: 0.8rem; color: var(--muted); }
+
+.tips { list-style: none; margin: 0; padding: 0; counter-reset: tip; }
+.tips li {
+  position: relative;
+  margin-bottom: var(--space-3);
+  padding-left: 2rem;
+  font-size: 0.92rem;
+  color: var(--ink-light);
+  counter-increment: tip;
+}
+.tips li::before {
+  content: counter(tip);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4rem;
+  text-align: center;
+}
+.tips strong { color: var(--ink); }
+
+/* Hanko-style seal: used once per page for the "last checked" stamp. */
+.hanko {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  transform: rotate(-8deg);
+}
+.hanko strong { font-size: 1rem; }
+
+.stale-note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.stale-note p { margin: 0; font-size: 0.92rem; color: var(--ink-light); }
+
+@media (max-width: 40rem) {
+  .route li:not(:last-child)::after { content: "\2193"; right: auto; left: 50%; top: auto; bottom: -1.1rem; transform: translateX(-50%); }
+  .stale-note { flex-direction: column; align-items: flex-start; }
+}
