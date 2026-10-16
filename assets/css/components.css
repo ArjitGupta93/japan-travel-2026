@@ -454,3 +454,28 @@ mark.approved {
   color: var(--muted);
 }
 .transport td:first-child { font-weight: 600; white-space: nowrap; }
+
+/* Photo + video pair (both portrait 9:16) */
+.media-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  max-width: 30rem;
+  margin: var(--space-4) 0 0;
+}
+.media { margin: 0; }
+.media img,
+.media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+}
+.media figcaption {
+  margin-top: var(--space-1);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
