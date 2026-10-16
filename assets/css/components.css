@@ -348,3 +348,109 @@ mark.approved {
   .route li:not(:last-child)::after { content: "\2193"; right: auto; left: 50%; top: auto; bottom: -1.1rem; transform: translateX(-50%); }
   .stale-note { flex-direction: column; align-items: flex-start; }
 }
+
+/* Stay & Travel page */
+
+/* Short bullet lists inside cards */
+.points {
+  list-style: none;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+}
+.points li {
+  position: relative;
+  margin-bottom: var(--space-2);
+  padding-left: 1.2rem;
+}
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.card h3.sub {
+  margin: var(--space-4) 0 var(--space-2);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Hotel cards */
+.hotels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hotel {
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+}
+.hotel__city {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hotel__name {
+  display: block;
+  margin: 2px 0 var(--space-1);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.hotel__note { font-size: 0.85rem; color: var(--muted); }
+
+/* Photo banner (tall photos are cropped, not squashed) */
+.photo { margin: 0 0 var(--space-3); }
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  object-position: center 62%;
+  border-radius: var(--radius-sm);
+}
+.photo figcaption {
+  margin-top: var(--space-1);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Transport table scrolls inside its own wrapper on small screens */
+.table-wrap { overflow-x: auto; margin-bottom: var(--space-3); }
+.transport {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.transport th,
+.transport td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+.transport th {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.transport td:first-child { font-weight: 600; white-space: nowrap; }
