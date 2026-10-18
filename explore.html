@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore: Japan Travel Journal</title>
+  <meta name="description" content="The places I actually visited in Japan, city by city: Tokyo, Hakone, Kamakura, Kyoto, Nara and Osaka, with photos, clips and what it cost.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/explore-data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="hero-tag">Explore &middot; Tokyo to Osaka</span>
+      <h1>Places I <em>actually</em> visited</h1>
+      <p class="hero__sub">
+        Plans changed along the way. Here is what really happened, city by city.
+      </p>
+      <ul class="chips">
+        <li class="chip">Tokyo</li>
+        <li class="chip">Hakone</li>
+        <li class="chip">Kamakura</li>
+        <li class="chip">Kyoto</li>
+        <li class="chip">Nara</li>
+        <li class="chip">Osaka</li>
+      </ul>
+      <dl class="stats">
+        <div><dt>Stops</dt><dd>6</dd></div>
+        <div><dt>Photos</dt><dd>46</dd></div>
+        <div><dt>Clips</dt><dd>6</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <main class="page" id="main">
+    <p class="eyebrow">Reality check</p>
+    <h2 style="margin-top:0">Plans that changed</h2>
+    <ul class="changed">
+      <li><strong>Flight delayed</strong> Weather held up our Hong Kong to Haneda flight, so we landed around 3 PM.</li>
+      <li><strong>Morning lost</strong> A &ldquo;quick&rdquo; shopping stop swallowed the morning, so Kamakura came late.</li>
+      <li><strong>Rain, plan B</strong> Rain in Kyoto: Kiyomizu-dera and Nanzen-ji skipped, teamLab instead.</li>
+      <li><strong>A detour</strong> We visited the Harry Potter studio before leaving Tokyo for Kyoto.</li>
+    </ul>
+
+    <div class="filters" role="group" aria-label="Filter photos">
+      <div class="filters__group" role="group" aria-label="City">
+        <button class="filter" type="button" data-group="city" data-value="all" aria-pressed="true">All cities</button>
+        <button class="filter" type="button" data-group="city" data-value="tokyo" aria-pressed="false">Tokyo</button>
+        <button class="filter" type="button" data-group="city" data-value="hakone" aria-pressed="false">Hakone</button>
+        <button class="filter" type="button" data-group="city" data-value="kamakura" aria-pressed="false">Kamakura</button>
+        <button class="filter" type="button" data-group="city" data-value="kyoto" aria-pressed="false">Kyoto</button>
+        <button class="filter" type="button" data-group="city" data-value="nara" aria-pressed="false">Nara</button>
+        <button class="filter" type="button" data-group="city" data-value="osaka" aria-pressed="false">Osaka</button>
+      </div>
+      <div class="filters__group" role="group" aria-label="Type">
+        <button class="filter" type="button" data-group="type" data-value="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-group="type" data-value="sight" aria-pressed="false">Sights</button>
+        <button class="filter" type="button" data-group="type" data-value="food" aria-pressed="false">Food</button>
+      </div>
+      <p class="filters__status" id="gallery-status" aria-live="polite"></p>
+    </div>
+
+    <noscript><p class="note">The photo gallery needs JavaScript. Please turn it on to see the photos.</p></noscript>
+
+    <div class="page-grid">
+      <article>
+        <section class="card city" data-city="tokyo">
+          <p class="eyebrow city__count"></p>
+          <h2>Tokyo</h2>
+          <p>
+            We landed at Haneda around 3 PM after the weather delay. I had filled in Visit Japan Web beforehand,
+            so immigration was quick. First night: ramen and a drink. Next day: Senso-ji and the streets around it,
+            Don Quijote for tax-free shopping, Ueno Park, a six-storey Akihabara building full of anime figures and
+            gadgets, Uniqlo in Ginza, then Shibuya for Hachiko, the famous crossing and dinner.
+          </p>
+          <p>
+            Before leaving for Kyoto we squeezed in the Harry Potter studio tour
+            (<a href="https://www.wbstudiotour.jp/en/tickets/" target="_blank" rel="noopener noreferrer">official tickets<span class="sr-only"> (opens in new tab)</span></a>).
+            A wonderful time, but beware of impulsive shopping.
+          </p>
+          <ul class="gallery" data-city="tokyo"></ul>
+        </section>
+
+        <section class="card city" data-city="hakone">
+          <p class="eyebrow city__count"></p>
+          <h2>Hakone and Mt Fuji</h2>
+          <p>
+            A full day on a guided Hakone and Mt Fuji tour. How I booked it and what it cost is on the
+            <a href="stay-travel.html">Stay &amp; Travel</a> page.
+          </p>
+          <ul class="gallery" data-city="hakone"></ul>
+        </section>
+
+        <section class="card city" data-city="kamakura">
+          <p class="eyebrow city__count"></p>
+          <h2>Kamakura</h2>
+          <p>
+            I planned to leave at 10 AM, but a quick shopping stop ate the morning. We reached Kamakura late and
+            saw Kotoku-in and Hase-dera. Temples close at 5 PM and the sun sets around 6, so there is little to do
+            after that. We still enjoyed what we saw.
+          </p>
+          <ul class="gallery" data-city="kamakura"></ul>
+        </section>
+
+        <section class="card city" data-city="kyoto">
+          <p class="eyebrow city__count"></p>
+          <h2>Kyoto</h2>
+          <p>
+            After the studio we took the train to Kyoto. At Nishiki Market the shops were closing around 10 PM,
+            so we had ramen and walked Gion's Hanamikoji Street instead.
+          </p>
+          <p>
+            The next day rained from morning, but we did not come all this way to sit in a hotel. Tofuku-ji and the
+            Tsuten-kyo bridge, then Fushimi Inari, which was lovely in the drizzle. We also had our first Indian
+            lunch of the trip: not great, and the most expensive meal so far. Kiyomizu-dera and Nanzen-ji had to go,
+            because we were getting wet. We went back, changed plans, and bought teamLab tickets on the spot:
+            an amazing, immersive experience.
+          </p>
+          <ul class="gallery" data-city="kyoto"></ul>
+        </section>
+
+        <section class="card city" data-city="nara">
+          <p class="eyebrow city__count"></p>
+          <h2>Nara</h2>
+          <p>
+            Another rainy day. It was fascinating to see so many well-mannered deer bowing for a treat.
+            Todai-ji is a massive wooden structure, built from huge tree trunks, with a giant Buddha inside.
+          </p>
+          <ul class="gallery" data-city="nara"></ul>
+        </section>
+
+        <section class="card city" data-city="osaka">
+          <p class="eyebrow city__count"></p>
+          <h2>Osaka</h2>
+          <p>
+            We checked in, then walked to Osaka Castle and its park, all within walking distance of the hotel.
+            That night we explored Don Quijote and the streets of Namba. The next day was a relaxed one at the
+            Kaiyukan Aquarium.
+          </p>
+          <ul class="gallery" data-city="osaka"></ul>
+        </section>
+      </article>
+
+      <aside class="cost-tips" aria-label="Cost and tips">
+        <div class="cost-tips__head"><h2>Cost &amp; Tips</h2></div>
+        <div class="cost-tips__body">
+          <h3>Entry fees</h3>
+          <ul class="cost-list">
+            <li><span>Harry Potter studio</span><span>&yen;6,600 &middot; ~&#8377;4,100</span></li>
+            <li><span>teamLab Kyoto</span><span>&yen;4,800 &middot; ~&#8377;3,000</span></li>
+            <li><span>Kaiyukan Aquarium</span><span>&yen;2,800 &middot; ~&#8377;1,750</span></li>
+            <li><span>Osaka Castle</span><span>&yen;1,200 &middot; ~&#8377;750</span></li>
+            <li><span>Todai-ji</span><span>&yen;1,000 &middot; ~&#8377;620</span></li>
+            <li><span>Giant wheel, Osaka</span><span>&yen;1,000 &middot; ~&#8377;620</span></li>
+            <li><span>Tofuku-ji</span><span>&yen;500 &middot; ~&#8377;310</span></li>
+            <li><span>Hase-dera</span><span>&yen;400 &middot; ~&#8377;250</span></li>
+            <li><span>Kotoku-in</span><span>&yen;400 &middot; ~&#8377;250</span></li>
+          </ul>
+          <p class="cost-per">Per person. Rupee figures are rounded, at about &#8377;0.62 per yen (mid-market rate, 13 Sep 2026). Card fees are extra.</p>
+
+          <h3>What I learned</h3>
+          <ol class="tips">
+            <li><strong>Start early.</strong> Temples close around 5 PM and the sun sets around 6.</li>
+            <li><strong>Rain is not a reason to stay in.</strong> Carry an umbrella and go anyway.</li>
+            <li><strong>Book the Harry Potter studio ahead,</strong> on the
+              <a href="https://www.wbstudiotour.jp/en/tickets/" target="_blank" rel="noopener noreferrer">official site<span class="sr-only"> (opens in new tab)</span></a>.</li>
+            <li><strong>Nishiki Market shops close early,</strong> so go in the afternoon.</li>
+            <li><strong>teamLab tickets bought on the spot worked for us,</strong> but check availability first.</li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <button class="lightbox__close" type="button" aria-label="Close viewer">&times;</button>
+    <button class="lightbox__nav lightbox__prev" type="button" aria-label="Previous">&lsaquo;</button>
+    <figure class="lightbox__figure">
+      <div class="lightbox__media"></div>
+      <figcaption>
+        <span class="lightbox__caption"></span>
+        <span class="lightbox__count" aria-live="polite"></span>
+      </figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__next" type="button" aria-label="Next">&rsaquo;</button>
+  </dialog>
+
+  <footer class="site-footer" id="site-footer"></footer>
+</body>
+</html>
