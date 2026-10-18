@@ -161,3 +161,35 @@
   .site-nav[hidden] { display: none; }
   .site-nav ul { flex-direction: column; padding-bottom: var(--space-2); }
 }
+
+/* Home hero: text on the left, portrait photo card on the right. */
+.hero--split .hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: var(--space-5);
+  align-items: center;
+}
+.hero__photo { margin: 0; }
+.hero__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 45%;
+  border: 6px solid var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px var(--shadow);
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 52rem) {
+  .hero--split .hero__inner { grid-template-columns: minmax(0, 1fr); }
+  .hero__photo { max-width: 22rem; }
+}
