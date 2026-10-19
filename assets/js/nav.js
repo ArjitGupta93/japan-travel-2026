@@ -8,6 +8,23 @@ const PAGES = [
   { href: "explore.html", label: "Explore" },
 ];
 
+// Cookieless analytics (GoatCounter), loaded on every page from here.
+(function loadAnalytics() {
+  const script = document.createElement("script");
+  script.async = true;
+  script.dataset.goatcounter = "https://japan-travel-2026.goatcounter.com/count";
+  script.src = "https://gc.zgo.at/count.js";
+  document.head.appendChild(script);
+})();
+
+// Count clicks on downloads (anything linked from assets/docs/) as events.
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[href*='assets/docs/']");
+  if (!link || !window.goatcounter || !window.goatcounter.count) return;
+  const file = link.getAttribute("href").split("/").pop();
+  window.goatcounter.count({ path: `download/${file}`, title: `Download: ${file}`, event: true });
+});
+
 function currentPage() {
   const file = window.location.pathname.split("/").pop();
   return file === "" ? "index.html" : file;
@@ -34,6 +51,7 @@ function buildFooter() {
   return `
     <div class="site-footer__inner">
       <p>A personal travel journal, written from my own experience. Not official advice: always check official sources.</p>
+      <p>Anonymous visit counts via GoatCounter. No cookies, no personal data.</p>
       <p>&copy; ${new Date().getFullYear()}</p>
     </div>`;
 }
